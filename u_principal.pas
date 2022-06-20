@@ -15,6 +15,10 @@ type
     nota4: TEdit;
     btn_calcular: TButton;
     procedure btn_calcularClick(Sender: TObject);
+    procedure nota1Exit(Sender: TObject);
+    procedure nota2Exit(Sender: TObject);
+    procedure nota3Exit(Sender: TObject);
+    procedure nota4Exit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +44,45 @@ begin
    media := ( n1 + n2 + n3 + n4 ) / 4;
 
    showMessage(nome.Text + ' sua média é ' + FloatToStr(media));
+end;
+
+procedure Tform_principal.nota1Exit(Sender: TObject);
+begin
+if   ( StrToFloat( nota1.Text )  < 1) or ( StrToFloat( nota1.Text )  > 10)  then
+ begin
+       showMessage('sua média é' );
+      nota1.SetFocus;
+ end;
+
+
+end;
+
+procedure Tform_principal.nota2Exit(Sender: TObject);
+begin
+      if   ( StrToFloat( nota2.Text )  < 1) or ( StrToFloat( nota2.Text )  > 10)  then
+ begin
+       showMessage('sua média é' );
+      nota2.SetFocus;
+ end;
+
+end;
+
+procedure Tform_principal.nota3Exit(Sender: TObject);
+begin
+       if   ( StrToFloat( nota3.Text )  < 1) or ( StrToFloat( nota3.Text )  > 10)  then
+ begin
+       showMessage('sua média é' );
+      nota3.SetFocus;
+ end;
+end;
+
+procedure Tform_principal.nota4Exit(Sender: TObject);
+begin
+ if   ( StrToFloat( nota4.Text )  < 1) or ( StrToFloat( nota4.Text )  > 10)  then
+ begin
+       showMessage('sua média é' );
+      nota4.SetFocus;
+ end;
 end;
 
 end.
